@@ -1,38 +1,37 @@
 import java.util.Scanner;
 
+
+//REVIEW WITH TRISTAN
 public class ConsoleExercises {
     public static void main(String[] args){
-//        System.out.println("Enter an integer: ");
-//        Scanner integer = new Scanner(System.in);
-//        int userInteger = integer.nextInt();
-//        System.out.println(userInteger);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter an integer: ");
+        int userInteger = scanner.nextInt();
+        System.out.println(userInteger);
 
         double pi = 3.14159;
-//        System.out.format("The value of pi is approximately %s.", pi);
-//        System.out.print("Enter three words: ");
-//        Scanner threeWords = new Scanner(System.in);
-//        String usersThreeWords = threeWords.nextLine();
-//        System.out.println(usersThreeWords);
+        System.out.format("The value of pi is approximately %s.", pi);
+        System.out.print("Enter three words: ");
+        String threeWords = scanner.nextLine();
+        System.out.println(threeWords);
 
-//        String firstWord = threeWords.next();
-//        String secondWord = threeWords.next();
-//        String thirdWord = threeWords.next();
-//
-//        System.out.println(firstWord);
-//        System.out.println(secondWord);
-//        System.out.println(thirdWord);
+        String firstWord = scanner.next();
+        String secondWord = scanner.next();
+        String thirdWord = scanner.next();
+
+        System.out.println(firstWord);
+        System.out.println(secondWord);
+        System.out.println(thirdWord);
 
         System.out.println("Enter width of Codeup Classroom in feet: ");
-        Scanner width = new Scanner(System.in);
-        double usersWidth = width.nextDouble();
+        double usersWidth = scanner.nextDouble();
 
         System.out.println("Enter length of Codeup Classroom in feet: ");
-        Scanner length = new Scanner(System.in);
-        double usersLength = length.nextDouble();
+        double usersLength = scanner.nextDouble();
 
         System.out.println("Enter width of Codeup Classroom in feet: ");
-        Scanner height = new Scanner(System.in);
-        double usersHeight = height.nextDouble();
+        double usersHeight = scanner.nextDouble();
 
         double area = usersWidth * usersLength;
         double perimeter = (usersWidth * 2) + (usersLength * 2);
