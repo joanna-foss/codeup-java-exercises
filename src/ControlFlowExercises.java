@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class ControlFlowExercises {
@@ -5,89 +6,119 @@ public class ControlFlowExercises {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //a. WHILE LOOP
-//        int i = 5;
-//        while(i <= 15){
-//            System.out.println(i);
-//            i++;
-//        }
+        int i = 5;
+        while(i <= 15){
+            System.out.println(i);
+            i++;
+        }
 
         //b. DO WHILE LOOP
         //b.1
-//        int i = 0;
-//        do{
-//            System.out.println(i);
-//            i += 2;
-//        } while(i<=100);
+        int a = 0;
+        do{
+            System.out.println(a);
+            a += 2;
+        } while(a<=100);
         //b.2
-//        int i = 100;
-//        do{
-//            System.out.println(i);
-//            i-=5;
-//        } while(i>=-10);
+        int b = 100;
+        do{
+            System.out.println(b);
+            b-=5;
+        } while(b>=-10);
         //b.3
-//        int j = 2;
-//        do{
-//            System.out.println(j);
-//            j = (int) Math.pow(j, 2); //why?
-//        } while(j<1000000);
+        int c = 2;
+        do{
+            System.out.println(c);
+            c = (int) Math.pow(c, 2); //why?
+        } while(c<1000000);
 
         //c. FOR LOOPS
         //c.1
-//        for(int i = 0; i<=100; i++){
-//            System.out.println(i);
-//        }
+        for(int d = 0; d<=100; d++){
+            System.out.println(d);
+        }
         //c.2
-//        for(int i = 100; i>=-10; i-=5){
-//            System.out.println(i);
-//        }
+        for(int e = 100; e>=-10; e-=5){
+            System.out.println(e);
+        }
         //c.3
-//        for(int j = 2; j<1000000; j=(int)Math.pow(j, 2)){
-//            System.out.println(j);
-//        }
+        for(int f = 2; f<1000000; f=(int)Math.pow(f, 2)){
+            System.out.println(f);
+        }
 
         //2. Fizzbuzz
-//        for(int i = 1; i<=100; i++){
-//            if(i % 3 == 0 && i % 5 == 0){
-//                System.out.println("FizzBuzz");
-//            } else if (i % 3 == 0){
-//                System.out.println("Fizz");
-//            } else if (i % 5 == 0){
-//                System.out.println("Buzz");
-//            } else {
-//                System.out.println(i);
-//            }
-//        }
-
-        //3.Display a table of powers
-//        System.out.println("Enter an integer: ");
-//        int integer = scanner.nextInt();
-//        System.out.println("Here is your table!");
-//        System.out.println("number | squared | cubed");
-//        System.out.println("______ | _______ | _____");
-//        int i = 1;
-//        do{
-//            System.out.println(i + "      | " + Math.pow(i, 2) + "     | " + Math.pow(i, 3));
-//            i++;
-//        } while(i <= integer);
-
-        System.out.println("Do you want to continue? [Y/N]");
-        char YorN = scanner.next().charAt(0);
-
-        if(YorN == 'Y'){
-            System.out.println("Enter in a number from 0 to 100 to see your corresponding grade: ");
-            int grade = scanner.nextInt();
-            if(grade<=59){
-                System.out.println("Your grade is an F");
-            } else if (grade<=66){
-                System.out.println("Your grade is an D");
-            } else if (grade<=79){
-                System.out.println("Your grade is an C");
-            } else if (grade<=87){
-                System.out.println("Your grade is an B");
-            }   else if (grade<=100){
-                System.out.println("Your grade is an A");
+        for(int g = 1; g<=100; g++){
+            if(g % 3 == 0 && g % 5 == 0){
+                System.out.println("FizzBuzz");
+            } else if (g % 3 == 0){
+                System.out.println("Fizz");
+            } else if (g % 5 == 0){
+                System.out.println("Buzz");
+            } else {
+                System.out.println(g);
             }
         }
 
+        //3.Display a table of powers
+        System.out.println("Enter an integer: ");
+        int integer = scanner.nextInt();
+        System.out.println("Do you want to see your table? [y/n]");
+        char yesOrNo = scanner.next().charAt(0);
+        if (yesOrNo == 'y') {
+            System.out.println("Oh yay! Our table! It's not broken!");
+            System.out.println("number | squared | cubed");
+            System.out.println("______ | _______ | _____");
+
+            int h = 1;
+            do {
+                System.out.println(i + "      | " + Math.round(Math.pow(h, 2)) + "       | " + Math.round(Math.pow(h, 3)));
+                h++;
+            } while (h <= 3);
+            do {
+                System.out.println(h + "      | " + Math.round(Math.pow(h, 2)) + "      | " + Math.round(Math.pow(h, 3)));
+                h++;
+            } while (h <= integer);
+        } else {
+            System.out.println("Ok.");
+        }
+
+        //4. Convert number grades into letter grades.
+        System.out.println("Do you want to continue? [y/n]");
+        char YorN = scanner.next().charAt(0);
+
+        while (Objects.equals(YorN, 'y')) {
+            System.out.println("Enter in a number from 0 to 100 to see your corresponding grade: ");
+            int grade = scanner.nextInt();
+            if (grade <= 59) {
+                System.out.println("Your grade is an F.");
+                if (grade > 57) {
+                    System.out.println("It's an F+ actually.");
+                }
+            } else if (grade <= 66) {
+                System.out.println("Your grade is a D.");
+                if (grade > 64) {
+                    System.out.println("It's actually a D+.");
+                }
+            } else if (grade <= 79) {
+                System.out.println("Your grade is a C.");
+                if (grade > 75) {
+                    System.out.println("You have a C+.");
+                }
+            } else if (grade <= 87) {
+                System.out.println("Your grade is a B!");
+                if (grade > 84) {
+                    System.out.println("It's actually a B+!");
+                }
+            } else if (grade <= 100) {
+                System.out.println("Your grade is an A!!!");
+                if (grade > 98) {
+                    System.out.println("You actually have an A+!!!");
+                }
+            }
+            System.out.println("Do you want to continue? [y/n]");
+            YorN = scanner.next().charAt(0);
+        }
+        System.out.println("Ok.");
     }
+
 }
