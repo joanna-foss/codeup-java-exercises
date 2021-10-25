@@ -7,7 +7,7 @@ public class ControlFlowExercises {
         Scanner scanner = new Scanner(System.in);
         //a. WHILE LOOP
         int i = 5;
-        while(i <= 15){
+        while (i <= 15) {
             System.out.println(i);
             i++;
         }
@@ -15,75 +15,84 @@ public class ControlFlowExercises {
         //b. DO WHILE LOOP
         //b.1
         int a = 0;
-        do{
+        do {
             System.out.println(a);
             a += 2;
-        } while(a<=100);
+        } while (a <= 100);
         //b.2
         int b = 100;
-        do{
+        do {
             System.out.println(b);
-            b-=5;
-        } while(b>=-10);
+            b -= 5;
+        } while (b >= -10);
         //b.3
         int c = 2;
-        do{
+        do {
             System.out.println(c);
             c = (int) Math.pow(c, 2); //why?
-        } while(c<1000000);
+        } while (c < 1000000);
 
         //c. FOR LOOPS
         //c.1
-        for(int d = 0; d<=100; d++){
+        for (int d = 0; d <= 100; d++) {
             System.out.println(d);
         }
         //c.2
-        for(int e = 100; e>=-10; e-=5){
+        for (int e = 100; e >= -10; e -= 5) {
             System.out.println(e);
         }
         //c.3
-        for(int f = 2; f<1000000; f=(int)Math.pow(f, 2)){
+        for (int f = 2; f < 1000000; f = (int) Math.pow(f, 2)) {
             System.out.println(f);
         }
 
         //2. Fizzbuzz
-        for(int g = 1; g<=100; g++){
-            if(g % 3 == 0 && g % 5 == 0){
+        for (int g = 1; g <= 100; g++) {
+            if (g % 3 == 0 && g % 5 == 0) {
                 System.out.println("FizzBuzz");
-            } else if (g % 3 == 0){
+            } else if (g % 3 == 0) {
                 System.out.println("Fizz");
-            } else if (g % 5 == 0){
+            } else if (g % 5 == 0) {
                 System.out.println("Buzz");
             } else {
                 System.out.println(g);
             }
         }
 
-        //3.Display a table of powers
-        System.out.println("Enter an integer: ");
-        int integer = scanner.nextInt();
-        System.out.println("Do you want to see your table? [y/n]");
-        char yesOrNo = scanner.next().charAt(0);
-        if (yesOrNo == 'y') {
+        //3.Display a table of powers //REFACTOR WITH TRISTAN
+        boolean confirm;
+        do {
+            System.out.println("Enter an integer: ");
+            int integer = scanner.nextInt();
+
             System.out.println("Oh yay! Our table! It's not broken!");
             System.out.println("number | squared | cubed");
             System.out.println("______ | _______ | _____");
 
-            int h = 1;
-            do {
-                System.out.println(i + "      | " + Math.round(Math.pow(h, 2)) + "       | " + Math.round(Math.pow(h, 3)));
-                h++;
-            } while (h <= 3);
-            do {
-                System.out.println(h + "      | " + Math.round(Math.pow(h, 2)) + "      | " + Math.round(Math.pow(h, 3)));
-                h++;
-            } while (h <= integer);
-        } else {
-            System.out.println("Ok.");
-        }
+            for (int z = 1; z <= integer; z++) {
+                System.out.printf("%-7d|%-9d|%-6d\n", z, z * z, z * z * z);
+            }
+
+            System.out.println("Do you want to see another table? [y/n]");
+            confirm = scanner.next().equalsIgnoreCase("y");
+        } while (confirm);
+
+//            MY ATTEMPT
+//            int h = 1;
+//            do {
+//                System.out.println(i + "      | " + Math.round(Math.pow(h, 2)) + "       | " + Math.round(Math.pow(h, 3)));
+//                h++;
+//            } while (h <= 3);
+//            do {
+//                System.out.println(h + "      | " + Math.round(Math.pow(h, 2)) + "      | " + Math.round(Math.pow(h, 3)));
+//                h++;
+//            } while (h <= integer);
+//        } else {
+//            System.out.println("Ok.");
+//        }
 
         //4. Convert number grades into letter grades.
-        System.out.println("Do you want to continue? [y/n]");
+        System.out.println("Do you want to continue to your letter grade? [y/n]");
         char YorN = scanner.next().charAt(0);
 
         while (Objects.equals(YorN, 'y')) {
@@ -115,7 +124,7 @@ public class ControlFlowExercises {
                     System.out.println("You actually have an A+!!!");
                 }
             }
-            System.out.println("Do you want to continue? [y/n]");
+            System.out.println("Do you want to see another letter grade? [y/n]");
             YorN = scanner.next().charAt(0);
         }
         System.out.println("Ok.");
