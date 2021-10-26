@@ -56,10 +56,8 @@ public class javaExtras {
 
         //needed values
         Scanner scanner = new Scanner(System.in);
-        int correctGuesses = 0;
         int incorrectGuesses = 0;
         StringBuilder allGuesses = new StringBuilder();
-        String letter = "";
         //end needed values
 
         System.out.println("**** WELCOME TO THE HANGMAN GAME, MY FRIEND *****\nYou will be given a random 4 letter word of the pet variety.\nYou have 6 attempts.\nGood luck!\n\nHere is your hidden word:\n");
@@ -76,7 +74,7 @@ public class javaExtras {
         System.out.println(wordHide);
         do {
             System.out.println("Guess a letter: ");
-            letter = scanner.next().toUpperCase();
+            char letter = scanner.next().charAt(0);
             System.out.println("You guessed " + letter + "!");
             if (!allGuesses.toString().contains(letter)) {
                 allGuesses.append(letter);
