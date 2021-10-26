@@ -3,14 +3,18 @@ import java.util.Scanner;
 public class MethodsExercises {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Would you like to perform a calculation? [Y/N]");
         Boolean wantCalc = scanner.nextLine().equalsIgnoreCase("y");
+
         if(wantCalc){
             System.out.println("What arithmetic would you like to accomplish?");
             String mathType = scanner.nextLine();
+
             System.out.printf("Okay, you want to %s. What 2 numbers do you want to use?", mathType);
             int num1 = scanner.nextInt();
             int num2 = scanner.nextInt();
+
             switch(mathType){
                 case "add":
                     System.out.println(add(num1, num2));
@@ -22,7 +26,7 @@ public class MethodsExercises {
                     System.out.println(multiply(num1, num2));
                     break;
                 case "divide":
-                    System.out.println(divide(num1, num2));
+                    System.out.println(divide(num1, num2) + "\nThe modulus of these two numbers is: " + modulus(num1, num2));
                     break;
                 default:
                     System.out.println("Nah, you've got to choose from the following: add, subtract, multiply, divide. Try again.");
@@ -46,5 +50,9 @@ public class MethodsExercises {
 
     public static int divide(int a, int b){
         return a / b;
+    }
+
+    public static int modulus(int a, int b){
+        return a % b;
     }
 }
