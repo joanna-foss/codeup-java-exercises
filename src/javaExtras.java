@@ -1,20 +1,24 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class javaExtras {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         //SUPER SIMPLE CHAT BOT
-        System.out.println("Hey, I finally have a visitor! What's you're name?");
-        String name = scanner.nextLine();
-        chatBot(name);
+//        System.out.println("Hey, I finally have a visitor! What's you're name?");
+//        String name = scanner.nextLine();
+//        chatBot(name);
 
         //HANGMAN GAME
-        System.out.println("Want to play a game of hangman?");
-        //need a yes or no ability here.
-        System.out.println("Enter in a word for player 2 to guess: ");
-        String word = scanner.nextLine();
-        hangmanGame(word);
+        System.out.println("Want to play a game of hangman? [Y/N]");
+        Boolean hangGame = scanner.nextLine().equalsIgnoreCase("y");
+        if(hangGame){
+            hangmanGame();
+        } else {
+            System.out.println("No worries!");
+        }
+
     }
 
     public static void chatBot(String name) {
@@ -48,17 +52,43 @@ public class javaExtras {
         } while (how);
     }
 
-    public static void hangmanGame(String word){
-        int numGuesses = 0;
+    public static void hangmanGame(){
+
+        //needed values
+        Scanner scanner = new Scanner(System.in);
+        int correctGuesses = 0;
+        int incorrectGuesses = 0;
+        StringBuilder allGuesses = new StringBuilder();
+        String letter = "";
+        //end needed values
+
+        System.out.println("**** WELCOME TO THE HANGMAN GAME, MY FRIEND *****\nYou will be given a random 4 letter word of the pet variety.\nYou have 6 attempts.\nGood luck!\n\nHere is your hidden word:\n");
+
+        String[] fourLetterPets = {"dogs", "cats", "bird", "fish", "pigs", "cows", "duck", "goat", "frog"};
+        Random obj = new Random();
+        int randomNum = obj.nextInt(9);
+
+        String word = (fourLetterPets[randomNum]);
+        word = word.toUpperCase();
+
+        String wordHide = word.replaceAll("[A-Z]", "_ ");
+
+        System.out.println(wordHide);
+        do {
+            System.out.println("Guess a letter: ");
+            letter = scanner.next().toUpperCase();
+            System.out.println("You guessed " + letter + "!");
+            if (!allGuesses.toString().contains(letter)) {
+                allGuesses.append(letter);
+
+            } else {
+                System.out.println("You already guessed that letter, silly goose! Try another one.\n" + wordHide);
+            }
+
+        } while(incorrectGuesses < 6 && wordHide.contains("_"));
+
     }
 }
-
-//### Hangman Game
-
-//- prompt a player 1 to enter a word for player 2 to guess
-//- track the number of guesses by player 2
-//- display to the user the partially completed word
-//- string methods from the lesson will be helpful for this bonus
 
 //# Console IO Exercises
 
