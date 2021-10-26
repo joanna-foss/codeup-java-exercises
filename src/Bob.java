@@ -28,6 +28,7 @@ public class Bob {
             } else if (input.equalsIgnoreCase("get me away from bob.")) {
                 System.out.println("Okay. Poof!");
                 talk = false;
+                break;
             } else {
                 System.out.println("Bob: Whatever.");
             }
