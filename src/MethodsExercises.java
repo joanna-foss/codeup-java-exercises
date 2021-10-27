@@ -94,11 +94,21 @@ public class MethodsExercises {
 
     //4. Dice rolling simulation
     public static void dice(){
-        System.out.println("Welcome to the Dice Roll Arena!!! You can choose 4, 6, 8, 10, or 20.");
-        int chosenDice = getInteger(4, 20);
+        Scanner scanner = new Scanner(System.in);
+        Boolean choice = true;
 
-        Random sides = new Random();
-        int roll = sides.nextInt(chosenDice);
-        System.out.printf("You rolled a %s!", roll);
+        System.out.println("Welcome to the Dice Roll Arena!!! You can choose 4, 6, 8, 10, or 20.");
+        System.out.println("Would you like to get ready to roll?");
+        choice = scanner.nextLine().equalsIgnoreCase("yes");
+        while(choice) {
+            int chosenDice = getInteger(4, 20);
+
+            Random sides = new Random();
+            int roll = sides.nextInt(chosenDice - 1) + 1;
+            System.out.printf("You rolled %s!\n", roll);
+            System.out.println("Would you like to roll again?");
+            choice = scanner.nextLine().equalsIgnoreCase("yes");
+        }
+        System.out.println("OKAY! See ya next time!!");
     }
 }
