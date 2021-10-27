@@ -37,7 +37,7 @@ public class MethodsExercises {
 //        } else {
 //            System.out.println("Okay. Have a nice day.");
 //        }
-        factorial();
+        dice();
     }
 
 //    public static int add(int a, int b) {
@@ -75,8 +75,9 @@ public class MethodsExercises {
     public static int factorial() {
         int userInput = getInteger(1, 10);
         String factorialString = userInput + "!";
-
         int baseline = 1;
+
+
         for (int num = 1; num <= userInput; num++) {
             if (num != userInput) {
                 factorialString = factorialString + " " + num + " x";
@@ -93,7 +94,11 @@ public class MethodsExercises {
 
     //4. Dice rolling simulation
     public static void dice(){
-        Random sides = new Random();
+        System.out.println("Welcome to the Dice Roll Arena!!! You can choose 4, 6, 8, 10, or 20.");
+        int chosenDice = getInteger(4, 20);
 
+        Random sides = new Random();
+        int roll = sides.nextInt(chosenDice);
+        System.out.printf("You rolled a %s!", roll);
     }
 }
