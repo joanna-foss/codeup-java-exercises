@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -18,7 +19,6 @@ public class javaExtras {
         } else {
             System.out.println("No worries!");
         }
-
     }
 
     public static void chatBot(String name) {
@@ -56,35 +56,49 @@ public class javaExtras {
 
         //needed values
         Scanner scanner = new Scanner(System.in);
-        int incorrectGuesses = 0;
+        int numOfIncorrect = 6;
         StringBuilder allGuesses = new StringBuilder();
         //end needed values
 
         System.out.println("**** WELCOME TO THE HANGMAN GAME, MY FRIEND *****\nYou will be given a random 4 letter word of the pet variety.\nYou have 6 attempts.\nGood luck!\n\nHere is your hidden word:\n");
 
+        //random word generated here
         String[] fourLetterPets = {"dogs", "cats", "bird", "fish", "pigs", "cows", "duck", "goat", "frog"};
         Random obj = new Random();
         int randomNum = obj.nextInt(9);
-
         String word = (fourLetterPets[randomNum]);
         word = word.toUpperCase();
 
-        String wordHide = word.replaceAll("[A-Z]", "_ ");
-
+        String wordHide = word.replaceAll("[A-Z]", "_");
+        System.out.println(word);
         System.out.println(wordHide);
+
+        //start guessing
         do {
             System.out.println("Guess a letter: ");
             char letter = scanner.next().charAt(0);
+            letter = Character.toUpperCase(letter);
             System.out.println("You guessed " + letter + "!");
+
             if (!allGuesses.toString().contains(letter)) {
                 allGuesses.append(letter);
-
+                if (!word.contains(letter)) {
+                    numOfIncorrect -= 1;
+                    System.out.printf("That wasn't one of the letters in the word!\nYou have %s guesses left! ", numOfIncorrect);
+                } else {
+                    replaceChar(wordHide, letter, word.indexOf(letter));
+                    System.out.println(wordHide);
+                }
             } else {
                 System.out.println("You already guessed that letter, silly goose! Try another one.\n" + wordHide);
             }
+        } while((numOfIncorrect != 0) || wordHide.contains("_"));
+    }
 
-        } while(incorrectGuesses < 6 && wordHide.contains("_"));
-
+    public static String replaceChar(String word, char letter, int index) {
+        StringBuilder newWord = new StringBuilder(word);
+        newWord.setCharAt(index, letter);
+        return newWord.toString();
     }
 }
 
