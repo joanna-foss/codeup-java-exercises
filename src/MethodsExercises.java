@@ -95,11 +95,10 @@ public class MethodsExercises {
     //4. Dice rolling simulation
     public static void dice(){
         Scanner scanner = new Scanner(System.in);
-        Boolean choice = true;
 
         System.out.println("Welcome to the Dice Roll Arena!!! You can choose 4, 6, 8, 10, or 20.");
         System.out.println("Would you like to get ready to roll?");
-        choice = scanner.nextLine().equalsIgnoreCase("yes");
+        boolean choice = scanner.nextLine().equalsIgnoreCase("yes");
         while(choice) {
             int chosenDice = getInteger(4, 20);
 
