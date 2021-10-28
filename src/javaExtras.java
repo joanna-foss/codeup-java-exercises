@@ -7,9 +7,9 @@ public class javaExtras {
         Scanner scanner = new Scanner(System.in);
 
         //SUPER SIMPLE CHAT BOT
-//        System.out.println("Hey, I finally have a visitor! What's you're name?");
-//        String name = scanner.nextLine();
-//        chatBot(name);
+        System.out.println("Hey, I finally have a visitor! What's you're name?");
+        String name = scanner.nextLine();
+        chatBot(name);
 
         //HANGMAN GAME
         System.out.println("Want to play a game of hangman? [Y/N]");
@@ -19,6 +19,8 @@ public class javaExtras {
         } else {
             System.out.println("No worries!");
         }
+
+
     }
 
     public static void chatBot(String name) {
