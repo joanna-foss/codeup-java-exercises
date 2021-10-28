@@ -19,11 +19,12 @@ public class Student {
 
     //Now, let's add a constructor - what is it? A METHOD OF OBJECT CREATION
     public Student(String studentName){
-        name = studentName;
-        cohort = "unassigned";
+//        name = studentName;
+//        cohort = "unassigned";
+        this(studentName, "unassigned"); //constructor inside another constructor
     }
     public Student(String studentName, String cohortName){
-        name = studentName;
-        cohort = cohortName;
+        this.name = studentName;
+        this.cohort = cohortName;
     }
 }
