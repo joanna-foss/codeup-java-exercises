@@ -97,8 +97,8 @@ public class MethodsExercises {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the Dice Roll Arena!!! You can choose 4, 6, 8, 10, or 20.");
-        System.out.println("Would you like to get ready to roll?");
-        boolean choice = scanner.nextLine().equalsIgnoreCase("yes");
+        System.out.println("Would you like to get ready to roll? [Y/N]");
+        boolean choice = scanner.nextLine().equalsIgnoreCase("y");
         while(choice) {
             int chosenDice = getInteger(4, 20);
 
