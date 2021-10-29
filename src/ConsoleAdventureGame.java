@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class ConsoleAdventureGame {
     public static void main(String[] args) {
-        welcome();
+        enter();
     }
 
-    public static void welcome() {
+    public static void enter() {
         Scanner welcomeSC = new Scanner(System.in);
         System.out.println("Press X to continue.\nPress any other key to exit.");
         boolean letsPlay = welcomeSC.next().equalsIgnoreCase("x");
