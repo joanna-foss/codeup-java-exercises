@@ -18,6 +18,31 @@ public class ConsoleAdventureGame {
     }
 
     public static void adventureGame(){
-        System.out.println("example");
+        createPlayers();
+//        if(single){
+//            //singleplayerGame();
+//        } else {
+//            //twoPlayerGame();
+//        }
+    }
+
+    public static void createPlayers() {
+        Scanner scanner = new Scanner(System.in);
+        boolean create = true;
+
+        System.out.println("Player, what is your name?");
+        String player = scanner.nextLine().toUpperCase();
+        Player player1 = new Player(player);
+//        System.out.printf("\nWelcome, %s. Are you alone? [Y/N]", player1.name);
+//        create = scanner.next().equalsIgnoreCase("y");
+
+//        if (!create) {
+//            System.out.println("Please enter the name of player 2: ");
+//            String nextPlayer;
+//            nextPlayer = scanner.nextLine().toUpperCase();
+//
+////            Player player2 = new Player(nextPlayer);
+//            System.out.printf("\nWelcome, %s. Are you both ready to play? [Y/N]", nextPlayer);
+//        }
     }
 }
