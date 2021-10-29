@@ -18,6 +18,6 @@ public class ConsoleAdventureGame {
     }
 
     public static void adventureGame(){
-
+        System.out.println("example");
     }
 }
