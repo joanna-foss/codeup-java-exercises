@@ -1,35 +1,14 @@
 public class Person {
-    //The class should have a constructor that accepts a `String` value and sets
-    //the person's name to the passed string.
-    //
-    //Create a `main` method on the class that creates a new `Person` object and
-    //tests the above methods.
     public static void main(String[] args) {
-//        Person joanna = new Person("Joanna");
-//        System.out.println(joanna.getName());
-//        joanna.sayHello();
-
-//        joanna.setName("lady");
-//        System.out.println(joanna.getName());
-//        joanna.sayHello();
-
-//        Person person1 = new Person("John");
-//        Person person2 = new Person("John");
-//        System.out.println(person1.getName().equals(person2.getName())); //true comparing string match
-//        System.out.println(person1 == person2); //false comparing exact match
-
-//        Person person1 = new Person("John");
-//        Person person2 = person1;
-//        System.out.println(person1 == person2); //true
 
         Person person1 = new Person("John");
         Person person2 = person1;
         System.out.println(person1.getName()); //John
         System.out.println(person2.getName()); //John
+
         person2.setName("Jane"); // ***review what's happening here***
         System.out.println(person1.getName()); //John - no. Jane
         System.out.println(person2.getName()); //Jane
-
     }
 
     private String name; //private field also considered a property (name is property)
