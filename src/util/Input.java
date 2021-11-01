@@ -20,7 +20,7 @@ public class Input {
     public boolean yesNo(){ //issues with this ignoring scanner input
         String input = scanner.nextLine();
         boolean yesNo = input.toLowerCase().matches("y|yes|true");
-        System.out.println("Your answer indicates the answer is: " + yesNo);
+        System.out.println("Your input indicates that your answer is: " + yesNo);
         return yesNo;
     }
 
@@ -79,9 +79,8 @@ public class Input {
         double validDouble;
         do{
             System.out.println("Enter in a valid decimal number: ");
-            validDouble = scanner.nextInt();
+            validDouble = scanner.nextDouble();
         }while(validDouble < min || validDouble > max);
-
 
         return validDouble;
     }
