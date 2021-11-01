@@ -5,11 +5,16 @@ import util.Input;
 public class Circle {
     private double radius;
 
-//    public double getArea(){
-//
-//    }
+    public double getCircumference(){
+        return radius * Math.PI * 2;
+    }
 
-//    public double getCircumference(){
-//        radius = Input.getDouble(1.0, 100.0);
-//    }
+    public Circle(double radius){
+        double area = getArea();
+        double circumference = getCircumference();
+    }
+
+    public double getArea(){
+        return Math.PI * Math.pow(radius, 2);
+    }
 }

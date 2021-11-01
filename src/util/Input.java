@@ -4,23 +4,27 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Input {
-    private static Scanner scanner = new Scanner(System.in);
 
-    public static String getString(){
+    private Scanner scanner;
+    public Input(){
+        this.scanner = new Scanner(System.in);
+    }
+
+    public String getString(){
         System.out.println("Enter anything: ");
         String userInput = scanner.nextLine();
         System.out.printf("You entered: %s", userInput);
         return userInput;
     }
 
-    public static boolean yesNo(){ //issues with this ignoring scanner input
+    public boolean yesNo(){ //issues with this ignoring scanner input
         String input = scanner.nextLine();
         boolean yesNo = input.toLowerCase().matches("y|yes|true");
         System.out.println("Your answer indicates the answer is: " + yesNo);
         return yesNo;
     }
 
-    public static int getInt(){
+    public int getInt(){
         int minimum = 0;
         int maximum = 21;
         int[] intArr = new int[2];
@@ -40,7 +44,7 @@ public class Input {
         return getInt(intArr[0], intArr[1]);
     }
 
-    public static int getInt(int min, int max){
+    public int getInt(int min, int max){
         int validInt;
         do{
             System.out.println("Make your choice here: ");
@@ -51,7 +55,7 @@ public class Input {
         return validInt;
     }
 
-    public static double getDouble(){
+    public double getDouble(){
         double minimum = 0.5;
         double maximum = 20.5;
         double[] doubleArr = new double[2];
@@ -71,7 +75,7 @@ public class Input {
         return getDouble(doubleArr[0], doubleArr[1]);
     }
 
-    public static double getDouble(double min, double max){
+    public double getDouble(double min, double max){
         double validDouble;
         do{
             System.out.println("Enter in a valid decimal number: ");

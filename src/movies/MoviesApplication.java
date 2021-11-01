@@ -10,6 +10,8 @@ public class MoviesApplication {
     public static Movie[] movies = MoviesArray.findAll();
 
     public static void main(String[] args) {
+        Input test = new Input();
+
         System.out.println("What would you like to do?\n");
         System.out.println("0 - exit");
         System.out.println("1 - view all movies");
@@ -19,7 +21,7 @@ public class MoviesApplication {
         System.out.println("5 - view scifi movies");
         System.out.println("6 - view comedy movies\n");
 
-        int choice = Input.getInt(0, 6);
+        int choice = test.getInt(0, 6);
 
         switch(choice){
             case 0:
@@ -78,6 +80,5 @@ public class MoviesApplication {
             default:
                 System.out.println("Try again later.");
         }
-
     }
 }
