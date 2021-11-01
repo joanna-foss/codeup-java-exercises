@@ -43,7 +43,7 @@ public class Input {
     public static int getInt(int min, int max){
         int validInt;
         do{
-            System.out.println("Enter in a valid integer: ");
+            System.out.println("Make your choice here: ");
             validInt = scanner.nextInt();
         }while(validInt < min || validInt > max);
 
