@@ -1,5 +1,4 @@
 public class Person {
-    public String name;
     public static void main(String[] args) {
 //        Person ken = new Person();
 
@@ -24,16 +23,18 @@ public class Person {
 //        System.out.println(Person.firstName); //CTE - compile time error;
     }
 
-    public String firstName;
-    public String lastName;
+//    public String firstName;
+//    public String lastName;
+    protected String name;
+    protected int age; //protected visibility is shared with subclasses.
 
     //instance method
-    public String joinChat(){
-        return lastName + ", " + firstName + " has joined the chat!";
-    }
+//    public String joinChat(){
+//        return lastName + ", " + firstName + " has joined the chat!";
+//    }
 
     //static
-    public static long worldPop = 7_900_000_000L;
+//    public static long worldPop = 7_900_000_000L;
 
     public Person(String name){
         this.name = name;
