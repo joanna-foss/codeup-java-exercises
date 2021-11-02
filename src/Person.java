@@ -1,5 +1,7 @@
 public class Person {
     public static void main(String[] args) {
+
+//IGNORE THESE NOTES:
 //        Person ken = new Person();
 
         //instance variables
@@ -23,29 +25,18 @@ public class Person {
 //        System.out.println(Person.firstName); //CTE - compile time error;
     }
 
-//    public String firstName;
-//    public String lastName;
     protected String name;
     protected int age; //protected visibility is shared with subclasses.
 
-    //instance method
-//    public String joinChat(){
-//        return lastName + ", " + firstName + " has joined the chat!";
-//    }
-
-    //static
-//    public static long worldPop = 7_900_000_000L;
-
-    public Person(String name){
+    public Person(String name) { //this is a default constructor.
         this.name = name;
-    }; //this is a default constructor.
+    }
 
-    public void sayHello(){
+    public void sayHello() {
         System.out.printf("Hello %s!%n", this.name);
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
-
 }

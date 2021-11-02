@@ -10,8 +10,8 @@ public class Employee extends Person{
 //        personKen.doWork(); //cannot be found in person superclass. will not work.
     }
 
-    public Employee(String name){
-        super(name);
+    public Employee(String employeeName){
+        super(employeeName); //calling the constructor method from the superclass -> Person(employeeName);
     }
 
     @Override
