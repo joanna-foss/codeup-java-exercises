@@ -32,9 +32,18 @@ public class Candy {
 
         String[] strTest = new String[] {"test1", "test2", "test3",};
         Candy candy3 = new Candy("Snickers", "Fun", strTest);
+        //Could also do this:
+        //Candy candytest = new Candy("candy-name", "candy-size", new String[] {"candy-description1", "candy-description2", "candy-description3"});
         candy3.displayInfo();
-//        System.out.println(Arrays.toString(candy3.descriptors));
         candy3.displayCandyDescriptors();
+
+        // Ken's review of the bonus:
+        // Candy[] myBag = {candy1, candy2, candy3};
+        // for(Candy singleCandy : myBag){
+        //     String descriptors = Arrays.toString(singleCandy.descriptors);
+        //     descriptors = descriptors.substring(1, descriptors.length - 1); //this will remove the brackets of the string array.
+        //     System.out.printf("%s, %s, %s", singleCandy.name, singleCandy.size, singleCandy.descriptors)
+        // }
     }
 
     public Candy(String name){
