@@ -9,11 +9,6 @@ public class Rectangle {
         this.rectangleWidth = width;
     }
 
-    public Rectangle(int lengthWidth){
-        this.rectangleLength = lengthWidth;
-        this.rectangleWidth = lengthWidth;
-    }
-
     public int getArea(){
         return this.rectangleLength * this.rectangleWidth;
     }
