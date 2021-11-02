@@ -1,35 +1,42 @@
 public class Person {
-
     public static void main(String[] args) {
+//IGNORE THESE NOTES:
+//        Person ken = new Person();
 
-        Person person1 = new Person("John");
-        Person person2 = person1;
-        System.out.println(person1.getName()); //John
-        System.out.println(person2.getName()); //John
+        //instance variables
+//        ken.firstName = "Ken";
+//        ken.lastName = "Howell";
+
+//        System.out.println("ken = " + ken); //<-- this is the location of where ken is
+//        System.out.println(ken.firstName + " " + ken.lastName + " is my name!");
+//        System.out.printf("%s %s is my name!%n", ken.firstName, ken.lastName);
+//
+//        System.out.println(ken.joinChat());
+
+//        Person douglas = new Person();
+//        douglas.firstName = "Douglas";
+//        douglas.lastName = "Hirsch";
+
+//        System.out.println("worldPop with Douglas :D = " + worldPop);
+//        System.out.println(douglas.worldPop);
 
         person2.setName("Jane"); // ***review what's happening here***
         System.out.println(person1.getName()); //John - no. Jane
         System.out.println(person2.getName()); //Jane
     }
 
-    private String name; //private field also considered a property (name is property)
+    protected String name;
+    protected int age; //protected visibility is shared with subclasses.
 
-    public Person(String personName){
-        this.name = personName;
-    }
-    //GETTERS AND SETTERS is the way to get indirect access to private fields.
-    public String getName(){   //would call using .getName(); would only call this on an object which is an instance of this particular class.
-    //TODO: return the person's name
-        return this.name;
-    }
-
-    public void setName(String name){
-    //TODO: change the name property to the passed value
+    public Person(String name) { //this is a default constructor.
         this.name = name;
     }
 
-    public void sayHello(){
-    //TODO: print a message to the console using the person's name
-        System.out.printf("Hello, %s!", this.name);
+    public void sayHello() {
+        System.out.printf("Hello %s!%n", this.name);
+    }
+
+    public String getName() {
+        return this.name;
     }
 }
