@@ -5,7 +5,6 @@ public class InheritanceAndPolymorphism {
 
         doWork(one);
         doWork(oneM);
-
     }
 
     public static void doWork(Worker worker){
