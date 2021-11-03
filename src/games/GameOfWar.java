@@ -8,7 +8,8 @@ import java.util.Scanner;
 ///The game should play 26 rounds, sum up each won game for each player.  Then output the winning player. Should be player vs computer.
 public class GameOfWar {
     public static int numOfRounds = 26;
-    public static Card[] cards = CardsArray.findAll();
+    public static Card[] deck = CardsArray.findAll();
+    public static Card[] deckCopy;
     public static Scanner scanner = new Scanner(System.in);
     public static boolean ready;
 
@@ -31,10 +32,10 @@ public class GameOfWar {
                 System.out.println("\nThe computer played: " + computerCard.getCardInfo());
                 System.out.println("You played: " + playerCard.getCardInfo());
                 numOfRounds--;
-                if(computerCard.numValue > playerCard.numValue){
+                if (computerCard.numValue > playerCard.numValue) {
                     System.out.println("\nThe computer won this round!\n");
                     computer.addWin();
-                } else if (playerCard.numValue > computerCard.numValue){
+                } else if (playerCard.numValue > computerCard.numValue) {
                     System.out.println("\nYou won this round!\n");
                     player1.addWin();
                 } else {
@@ -46,9 +47,9 @@ public class GameOfWar {
             } while (numOfRounds > 0);
         }
 
-        if(player1.gamesWon> computer.gamesWon){
+        if (player1.gamesWon > computer.gamesWon) {
             System.out.printf("%nCONGRATS!!! You finished the game with a total of %s wins. YOU WON THE GAME OF WAR!%n", player1.gamesWon);
-        } else if (computer.gamesWon>player1.gamesWon){
+        } else if (computer.gamesWon > player1.gamesWon) {
             System.out.printf("%nGAH! The computer beat you with a total of %s wins. YOU LOST THE GAME OF WAR.%n", computer.gamesWon);
         } else {
             System.out.println("%nLooks like it's a tie! No defeat, but also no loss!%n");
@@ -58,14 +59,16 @@ public class GameOfWar {
     public static Card getRandomCard() {
         Random random = new Random();
         int number = random.nextInt(51) + 1;
-        return cards[number];
+        return deck[number];
     }
-}
 
-// MY ATTEMPTS AT CREATING A NEW ARRAY AFTER EVERY CARD DRAWN. DOES NOT WORK.
-//    public Card[] getCards(){
-//        String playedCard = getRandomCard();
-//        System.arraycopy(cards, i+1, cardsCopy, i, cards.length-1-1);
+
+    // MY ATTEMPTS AT CREATING A NEW ARRAY AFTER EVERY CARD DRAWN. DOES NOT WORK.
+//    public Card[] getCards(Card[] arr) {
+//        Card playedCard = getRandomCard();
+//        for (int i = 0; i<arr.length; i++){
+//
+//        }
 //    }
 
 //    public int findIndex(int arr[], int ind){
@@ -80,3 +83,4 @@ public class GameOfWar {
 //        }
 //        return -1;
 //    }
+}
