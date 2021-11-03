@@ -1,19 +1,16 @@
 public class gameExtras {
 /**# Classes and Objects
 
-1. Play the card game of “War”
-
-    Make it two player. You can have Player vs. computer or computer1 vs.
-    computer2
+1. Play the card game of “War”:
 
     Make a new package called `card-games`, inside of the package, make the
     following classes:
 
     - Make a player class called Player.java. It should have a `gamesWon` field
       for the number of games won and a `name` property that is set with the
-      contructor
+      constructor.
 
-    - Make a card class inside Card.java that has suit and value
+    - Make a card class inside Card.java that has suit and value.
 
     - Make a file called CardsArray.java. (Like the MoviesArray.java) It should
       have 52 different lines creating playing card objects. The array of

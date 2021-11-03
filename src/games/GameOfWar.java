@@ -1,6 +1,9 @@
 package games;
 
-///The game should play 26 rounds, sum up each won game for each player.  Then output the winning player.
+import java.util.Arrays;
+import java.util.List;
+
+///The game should play 26 rounds, sum up each won game for each player.  Then output the winning player. Should be player vs computer.
 public class GameOfWar {
     public static int numOfRounds = 26;
     public static void main(String[] args) {
@@ -10,7 +13,6 @@ public class GameOfWar {
         System.out.println("player1.name = " + player1.name);
 
         do{
-            System.out.println(Card.getRandomCard());
             numOfRounds--;
         } while(numOfRounds>0);
     }
