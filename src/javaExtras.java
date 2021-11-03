@@ -82,18 +82,18 @@ public class javaExtras {
             letter = Character.toUpperCase(letter);
             System.out.println("You guessed " + letter + "!");
 
-            if (!allGuesses.toString().contains(letter)) {
-                allGuesses.append(letter);
-                if (!word.contains(letter)) {
-                    numOfIncorrect -= 1;
-                    System.out.printf("That wasn't one of the letters in the word!\nYou have %s guesses left! ", numOfIncorrect);
-                } else {
-                    replaceChar(wordHide, letter, word.indexOf(letter));
-                    System.out.println(wordHide);
-                }
-            } else {
-                System.out.println("You already guessed that letter, silly goose! Try another one.\n" + wordHide);
-            }
+//            if (!allGuesses.toString().contains(letter)) {
+//                allGuesses.append(letter);
+//                if (!word.contains(letter)) {
+//                    numOfIncorrect -= 1;
+//                    System.out.printf("That wasn't one of the letters in the word!\nYou have %s guesses left! ", numOfIncorrect);
+//                } else {
+//                    replaceChar(wordHide, letter, word.indexOf(letter));
+//                    System.out.println(wordHide);
+//                }
+//            } else {
+//                System.out.println("You already guessed that letter, silly goose! Try another one.\n" + wordHide);
+//            }
         } while((numOfIncorrect != 0) || wordHide.contains("_"));
     }
 
