@@ -1,6 +1,5 @@
 public class Person {
     public static void main(String[] args) {
-
 //IGNORE THESE NOTES:
 //        Person ken = new Person();
 
@@ -21,8 +20,9 @@ public class Person {
 //        System.out.println("worldPop with Douglas :D = " + worldPop);
 //        System.out.println(douglas.worldPop);
 
-        //Can we talk to Person.firstName??
-//        System.out.println(Person.firstName); //CTE - compile time error;
+        person2.setName("Jane"); // ***review what's happening here***
+        System.out.println(person1.getName()); //John - no. Jane
+        System.out.println(person2.getName()); //Jane
     }
 
     protected String name;
