@@ -20,9 +20,9 @@ public class Person {
 //        System.out.println("worldPop with Douglas :D = " + worldPop);
 //        System.out.println(douglas.worldPop);
 
-        person2.setName("Jane"); // ***review what's happening here***
-        System.out.println(person1.getName()); //John - no. Jane
-        System.out.println(person2.getName()); //Jane
+//        person2.setName("Jane"); // ***review what's happening here***
+//        System.out.println(person1.getName()); //John - no. Jane
+//        System.out.println(person2.getName()); //Jane
     }
 
     protected String name;
