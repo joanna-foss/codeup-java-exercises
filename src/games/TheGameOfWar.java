@@ -1,21 +1,16 @@
 package games;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
-///The game should play 26 rounds, sum up each won game for each player.  Then output the winning player. Should be player vs computer.
-public class GameOfWar {
-    public static int numOfRounds = 26;
-    public static Card[] deck = CardsArray.findAll();
-    public static Card[] deckCopy;
-    public static Scanner scanner = new Scanner(System.in);
-    public static boolean ready;
-
+public class TheGameOfWar {
     public static void main(String[] args) {
+        playWar();
+    }
+
+    private static void playWar() {
         Player player1 = new Player();
-        Player computer = new Player();
+        Player computer = new Player("Computer");
         System.out.println("You have begun the Game of War!");
 
         player1.setName();
@@ -25,9 +20,10 @@ public class GameOfWar {
         ready = scanner.next().equalsIgnoreCase("yes");
 
         if (ready) {
+            deckCopy = shuffle();
             do {
-                Card computerCard = new Card(getRandomCard());
-                Card playerCard = new Card(getRandomCard());
+                Card computerCard = new Card(deckCopy[0]);
+                Card playerCard = new Card(deckCopy[1]);
 
                 System.out.println("\nThe computer played: " + computerCard.getCardInfo());
                 System.out.println("You played: " + playerCard.getCardInfo());
@@ -42,6 +38,9 @@ public class GameOfWar {
                     System.out.println("\nYou tied! No one wins this round.\n");
                 }
                 System.out.printf("So far, the computer has %s wins and you have %s wins!%n", computer.gamesWon, player1.gamesWon);
+
+                deckCopy = Arrays.copyOfRange(deckCopy, 2, deckCopy.length);
+                System.out.println("deckCopy.length = " + deckCopy.length);
                 System.out.println("Enter anything to play the next round.");
                 scanner.next();
             } while (numOfRounds > 0);
@@ -56,35 +55,19 @@ public class GameOfWar {
         }
     }
 
-    public static Card getRandomCard() {
-        Random random = new Random();
-        int number = random.nextInt(51) + 1;
-        return deck[number];
+    private static Card[] shuffle() {
+        for (int i = 1; i < deck.length; i++) {
+            int random = (int) (Math.random() * deck.length);
+            Card currentCard = deck[i];
+            deck[i] = deck[random];
+            deck[random] = currentCard;
+        }
+        return deck;
     }
 
-    public static void shuffle(){
-        //for loop here that will mix the deck
-    }
-
-
-    // MY ATTEMPTS AT CREATING A NEW ARRAY AFTER EVERY CARD DRAWN. DOES NOT WORK.
-//    public Card[] getCards(Card[] arr) {
-//        Card playedCard = getRandomCard();
-//        for (int i = 0; i<arr.length; i++){
-//
-//        }
-//    }
-
-//    public int findIndex(int arr[], int ind){
-//        int length = arr.length;
-//        int i = 0;
-//        while(i < length){
-//            if(arr[i] == ind){
-//                return i;
-//            } else {
-//                i = i + 1;
-//            }
-//        }
-//        return -1;
-//    }
+    public static int numOfRounds = 26;
+    public static Card[] deck = CardsArray.getAllCards();
+    public static Card[] deckCopy;
+    public static Scanner scanner = new Scanner(System.in);
+    public static boolean ready;
 }

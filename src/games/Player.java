@@ -8,9 +8,11 @@ public class Player {
 
     public Player(){}
 
-    public int addWin(){
+    public Player(String input){
+        this.name = input;
+    }
+    public void addWin(){
         gamesWon += 1;
-        return this.gamesWon;
     }
 
     public void setName(){

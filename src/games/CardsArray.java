@@ -1,9 +1,9 @@
 package games;
 
 public class CardsArray {
-    public static Card[] findAll(){
+    public static Card[] getAllCards(){
         return new Card[]{
-            new Card("hearts", "A", 13),
+            new Card("hearts", "Ace", 13),
             new Card("hearts", "2", 1),
             new Card("hearts", "3", 2),
             new Card("hearts", "4", 3),
@@ -13,10 +13,10 @@ public class CardsArray {
             new Card("hearts", "8", 7),
             new Card("hearts", "9", 8),
             new Card("hearts", "10", 9),
-            new Card("hearts", "J", 10),
-            new Card("hearts", "Q", 11),
-            new Card("hearts", "K", 12),
-            new Card("diamonds", "A", 13),
+            new Card("hearts", "Jack", 10),
+            new Card("hearts", "Queen", 11),
+            new Card("hearts", "King", 12),
+            new Card("diamonds", "Ace", 13),
             new Card("diamonds", "2", 1),
             new Card("diamonds", "3", 2),
             new Card("diamonds", "4", 3),
@@ -26,10 +26,10 @@ public class CardsArray {
             new Card("diamonds", "8", 7),
             new Card("diamonds", "9", 8),
             new Card("diamonds", "10", 9),
-            new Card("diamonds", "J", 10),
-            new Card("diamonds", "Q", 11),
-            new Card("diamonds", "K", 12),
-            new Card("spades", "A", 13),
+            new Card("diamonds", "Jack", 10),
+            new Card("diamonds", "Queen", 11),
+            new Card("diamonds", "King", 12),
+            new Card("spades", "Ace", 13),
             new Card("spades", "2", 1),
             new Card("spades", "3", 2),
             new Card("spades", "4", 3),
@@ -39,10 +39,10 @@ public class CardsArray {
             new Card("spades", "8", 7),
             new Card("spades", "9", 8),
             new Card("spades", "10", 9),
-            new Card("spades", "J", 10),
-            new Card("spades", "Q", 11),
-            new Card("spades", "K", 12),
-            new Card("clubs", "A", 13),
+            new Card("spades", "Jack", 10),
+            new Card("spades", "Queen", 11),
+            new Card("spades", "King", 12),
+            new Card("clubs", "Ace", 13),
             new Card("clubs", "2", 1),
             new Card("clubs", "3", 2),
             new Card("clubs", "4", 3),
@@ -52,9 +52,9 @@ public class CardsArray {
             new Card("clubs", "8", 7),
             new Card("clubs", "9", 8),
             new Card("clubs", "10", 9),
-            new Card("clubs", "J", 10),
-            new Card("clubs", "Q", 11),
-            new Card("clubs", "K", 12),
+            new Card("clubs", "Jack", 10),
+            new Card("clubs", "Queen", 11),
+            new Card("clubs", "King", 12),
         };
     }
 }
