@@ -1,6 +1,6 @@
 package Interfaces_Abstract_Lecture;
 
-abstract class Employee {
+abstract class Employee implements DailyWork{
     //    protected - visibility modifier that allows us to share information between the super and subclasses but only between those two things.
     protected String name;
     protected String department;
@@ -18,7 +18,7 @@ abstract class Employee {
         return department;
     }
 
-    public abstract String work();
+//    public abstract String work(); //used without implementation of interface.
 
 //    public static void main(String[] args) {
 //        Employee one = new Employee("WHAT", "WHAT"); //CANNOT INSTANTIATE - CTE (compile time error)
