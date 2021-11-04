@@ -62,6 +62,10 @@ public class GameOfWar {
         return deck[number];
     }
 
+    public static void shuffle(){
+        //for loop here that will mix the deck
+    }
+
 
     // MY ATTEMPTS AT CREATING A NEW ARRAY AFTER EVERY CARD DRAWN. DOES NOT WORK.
 //    public Card[] getCards(Card[] arr) {
