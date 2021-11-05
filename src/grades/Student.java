@@ -3,14 +3,6 @@ package grades;
 import java.util.ArrayList;
 
 public class Student {
-    public static void main(String[] args) {
-        Student joanna = new Student("joanna");
-        joanna.addGrade(100);
-        joanna.addGrade(0);
-        System.out.println("joanna.grades = " + joanna.grades);
-        System.out.println("joanna.getGradeAverage() = " + joanna.getGradeAverage());
-    }
-
     private String name;
     private ArrayList<Double> grades = new ArrayList<>();
 
