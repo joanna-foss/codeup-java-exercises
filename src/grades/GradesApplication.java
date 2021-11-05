@@ -45,5 +45,7 @@ public class GradesApplication {
             System.out.println("Would you like to see another user? [Y/N]");
             moreStudents = scanner.next().equalsIgnoreCase("y");
         } while(moreStudents);
+
+        System.out.println("Goodbye.");
     }
 }
