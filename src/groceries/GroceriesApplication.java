@@ -13,10 +13,30 @@ public class GroceriesApplication {
         Input input = new Input();
 //        GroceryItem[] groceries = GroceriesArray.findAll();
         HashMap<Integer, GroceryItem> groceries = new HashMap<>();
+        System.out.println(groceries.isEmpty());
         System.out.println("Hello, and welcome to the Grocery List App.");
-        System.out.println("Would you like to create a grocery list? [Y/N]");
+        int selection = showOptions();
+        switch (selection){
+            case 1:
+                if(groceries.isEmpty()){
+                    System.out.println("Your list is empty!");
+                } else {
+                    System.out.println(groceries); //will display location as is. Address this later.
+                }
+            case 2:
+                System.out.println("2");
+            case 3:
+                System.out.println("3");
+            case 4:
+                System.out.println("4");
+            default:
+                System.out.println("default");
+
+        }
+
         boolean makeList = input.getString().equalsIgnoreCase("y");
         while(makeList){
+
             boolean wantAddItem;
             do{
                 GroceryItem current = new GroceryItem();
@@ -35,4 +55,16 @@ public class GroceriesApplication {
             makeList = input.getString().equalsIgnoreCase("y");
         };
     };
+
+    public static int showOptions(){
+        Input input = new Input();
+        System.out.println("\nYou can choose from any of the following:");
+        System.out.println("0 - Show Grocery List");
+        System.out.println("1 - Add Item");
+        System.out.println("2 - Remove Item");
+        System.out.println("3 - Search for Item");
+        System.out.println("4 - Exit");
+        System.out.println("What would you like to do? Please enter a number: ");
+        return input.getInt();
+    }
 }
