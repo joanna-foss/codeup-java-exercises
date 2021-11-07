@@ -2,7 +2,7 @@ package groceries;
 
 import util.Input;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class GroceriesApplication {
     public static void main(String[] args) {
@@ -10,61 +10,91 @@ public class GroceriesApplication {
     }
 
     public static void createGroceryList(){
-        Input input = new Input();
-//        GroceryItem[] groceries = GroceriesArray.findAll();
-        HashMap<Integer, GroceryItem> groceries = new HashMap<>();
-        System.out.println(groceries.isEmpty());
+        ArrayList<GroceryItem> myGroceries = new ArrayList<>();
+        boolean create = true;
+
         System.out.println("Hello, and welcome to the Grocery List App.");
-        int selection = showOptions();
-        switch (selection){
-            case 1:
-                if(groceries.isEmpty()){
-                    System.out.println("Your list is empty!");
-                } else {
-                    System.out.println(groceries); //will display location as is. Address this later.
+        while(create) {
+            int selection = selectAnOption();
+            switch (selection) {
+                case 0 -> {
+                    if (myGroceries.isEmpty()) {
+                        System.out.println("Your list is empty!");
+                    } else {
+                        System.out.println(myGroceries); //will display location as is. Address this later.
+                    }
                 }
-            case 2:
-                System.out.println("2");
-            case 3:
-                System.out.println("3");
-            case 4:
-                System.out.println("4");
-            default:
-                System.out.println("default");
-
-        }
-
-        boolean makeList = input.getString().equalsIgnoreCase("y");
-        while(makeList){
-
-            boolean wantAddItem;
-            do{
-                GroceryItem current = new GroceryItem();
-                System.out.println("Choose a category:\n(1) Fruits\n(2) Veggies\n(3) Bakery");
-                int category = input.getInt();
-                System.out.println("Enter the name of your item: ");
-                String currentItem = input.getString();
-                System.out.println("How many of these do you want?");
-                int numOfItem = input.getInt();
-
-                System.out.println("Would you like to add another item to your list? [Y/N]");
-                wantAddItem = input.getString().equalsIgnoreCase("y");
-            } while(wantAddItem);
-//            System.out.println(groceries);
-            System.out.println("Would you like to create another grocery list?");
-            makeList = input.getString().equalsIgnoreCase("y");
+                case 1 -> {
+                    System.out.println("1"); //add item method
+                    addItem();
+                }
+                case 2 -> {
+                    System.out.println("2"); //remove item method
+                }
+                case 3 -> {
+                    System.out.println("3"); //search item method
+                }
+                case 4 -> {
+                    displayCategories();
+                }
+                case 5 -> {
+                    System.out.println("Excellent! I hope you had fun. Bye bye now!");
+                    return;
+                }
+                default -> {
+                    System.out.println("I'm sorry. I wasn't able to understand your input.");
+                }
+            }
+            System.out.println("Would you like to make another selection? [Y/N]");
+            create = input.yesNo();
         };
     };
 
-    public static int showOptions(){
-        Input input = new Input();
+    static Input input = new Input();
+    //int item = 0;
+
+    public static int selectAnOption(){
         System.out.println("\nYou can choose from any of the following:");
         System.out.println("0 - Show Grocery List");
         System.out.println("1 - Add Item");
         System.out.println("2 - Remove Item");
         System.out.println("3 - Search for Item");
-        System.out.println("4 - Exit");
+        System.out.println("4 - Show Categories");
+        System.out.println("5 - Exit");
         System.out.println("What would you like to do? Please enter a number: ");
         return input.getInt();
+    }
+
+    public static void addItem(){
+        System.out.println("First, choose a category to add your item to: ");
+        displayCategories();
+        int categoryNum = input.getInt();
+
+        System.out.println("What is the item you'd like to add?");
+        String item = input.getString(); //something is happening here...
+
+        System.out.println("How many of these would you like to add?");
+        int quantity = input.getInt();
+
+    }
+
+    public static void removeItem(){
+
+    }
+
+//    public static void searchItem(){
+//        //does list contain item? display yes or no.
+//        //perhaps call another method to display item.
+//    }
+
+    public static void displayCategories(){
+        System.out.println("These are the available categories in your grocery list:");
+        System.out.println("(1) Produce");
+        System.out.println("(2) Dairy");
+        System.out.println("(3) Meat");
+        System.out.println("(4) Beverages");
+        System.out.println("(5) Canned Goods");
+        System.out.println("(6) Bakery");
+        System.out.println("(7) Everything Else");
     }
 }

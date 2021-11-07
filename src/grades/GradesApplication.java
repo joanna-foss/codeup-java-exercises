@@ -1,6 +1,5 @@
 package grades;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -31,10 +30,10 @@ public class GradesApplication {
         System.out.println("Here are the GitHub usernames of our students:\n");
         System.out.println(students.keySet());
 
-        boolean moreStudents = false;
+        boolean moreStudents;
         do {
             System.out.println("Which GitHub user would you like more information on?");
-            String chosen = scanner.next(); //does not work with nextLine()... what is the difference between next() and nextLine()?
+            String chosen = scanner.next(); //next() vs nextLine()
             Student current = students.get(chosen);
             if(current == null){
                 System.out.println("That user does not exist.");
