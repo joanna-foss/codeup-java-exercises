@@ -3,6 +3,7 @@ package groceries;
 import util.Input;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GroceriesApplication {
     public static void main(String[] args) {
@@ -10,7 +11,14 @@ public class GroceriesApplication {
     }
 
     public static void createGroceryList(){
-        ArrayList<GroceryItem> myGroceries = new ArrayList<>();
+        HashMap<String, Integer> produce = new HashMap<>();
+        HashMap<String, Integer> dairy = new HashMap<>();
+        HashMap<String, Integer> meat = new HashMap<>();
+        HashMap<String, Integer> beverages = new HashMap<>();
+        HashMap<String, Integer> cannedGoods = new HashMap<>();
+        HashMap<String, Integer> bakery = new HashMap<>();
+        HashMap<String, Integer> everythingElse = new HashMap<>();
+
         boolean create = true;
 
         System.out.println("Hello, and welcome to the Grocery List App.");
