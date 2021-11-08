@@ -4,6 +4,7 @@ import util.Input;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class GroceriesApplication {
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class GroceriesApplication {
         HashMap<String, Integer> cannedGoods = new HashMap<>();
         HashMap<String, Integer> bakery = new HashMap<>();
         HashMap<String, Integer> everythingElse = new HashMap<>();
+        Map<String, Integer> myGroceries = Map.of();
 
         boolean create = true;
 
@@ -33,8 +35,49 @@ public class GroceriesApplication {
                     }
                 }
                 case 1 -> {
-                    System.out.println("1"); //add item method
-                    addItem();
+                    //add item method
+                    System.out.println("First, choose a category to add your item to: ");
+                    displayCategories();
+                    int categoryNum = input.getInt();
+
+                    System.out.println("What is the item you'd like to add?");
+                    String grocery = input.getString(); //something is happening here...
+
+                    System.out.println("How many of these would you like to add?");
+                    int quantity = input.getInt();
+
+                    switch(categoryNum){
+                        case 1 -> {
+                            produce.put(grocery, quantity);
+                            System.out.println(produce);
+                        }
+                        case 2 -> {
+                            dairy.put(grocery, quantity);
+                            System.out.println(dairy);
+                        }
+                        case 3 -> {
+                            meat.put(grocery, quantity);
+                            System.out.println(dairy);
+                        }
+                        case 4 -> {
+                            beverages.put(grocery, quantity);
+                            System.out.println(dairy);
+                        }
+                        case 5 -> {
+                            cannedGoods.put(grocery, quantity);
+                            System.out.println(dairy);
+                        }
+                        case 6 -> {
+                            bakery.put(grocery, quantity);
+                            System.out.println(dairy);
+                        }
+                        case 7 -> {
+                            everythingElse.put(grocery, quantity);
+                            System.out.println(dairy);
+                        }
+                        default -> System.out.println("default");
+                    }
+
                 }
                 case 2 -> {
                     System.out.println("2"); //remove item method
@@ -42,7 +85,7 @@ public class GroceriesApplication {
                 case 3 -> {
                     System.out.println("3"); //search item method
                 }
-                case 4 -> {
+                case 4 -> { //display categories
                     displayCategories();
                 }
                 case 5 -> {
@@ -59,7 +102,6 @@ public class GroceriesApplication {
     };
 
     static Input input = new Input();
-    //int item = 0;
 
     public static int selectAnOption(){
         System.out.println("\nYou can choose from any of the following:");
@@ -73,27 +115,9 @@ public class GroceriesApplication {
         return input.getInt();
     }
 
-    public static void addItem(){
-        System.out.println("First, choose a category to add your item to: ");
-        displayCategories();
-        int categoryNum = input.getInt();
-
-        System.out.println("What is the item you'd like to add?");
-        String item = input.getString(); //something is happening here...
-
-        System.out.println("How many of these would you like to add?");
-        int quantity = input.getInt();
+    public static void itemMan(){
 
     }
-
-    public static void removeItem(){
-
-    }
-
-//    public static void searchItem(){
-//        //does list contain item? display yes or no.
-//        //perhaps call another method to display item.
-//    }
 
     public static void displayCategories(){
         System.out.println("These are the available categories in your grocery list:");
