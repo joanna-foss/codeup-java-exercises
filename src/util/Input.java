@@ -10,7 +10,7 @@ public class Input {
     }
 
     public String getString(){
-        return scanner.nextLine();
+        return scanner.next();
     }
 
     public boolean yesNo(){ //issues with this ignoring scanner input
@@ -19,7 +19,12 @@ public class Input {
     }
 
     public int getInt(){
-        return scanner.nextInt();
+        try {
+            String s = getString();
+            return Integer.valueOf(s);
+        } catch(NumberFormatException e){
+            throw new NumberFormatException("That was not a number.");
+        }
     }
 
     public int getInt(int min, int max){
@@ -33,7 +38,12 @@ public class Input {
     }
 
     public double getDouble(){
-        return scanner.nextDouble();
+        try {
+            String s = getString();
+            return Double.valueOf(s);
+        } catch(NumberFormatException e){
+            throw new NumberFormatException("That was not a number.");
+        }
     }
 
     public double getDouble(double min, double max){
@@ -44,5 +54,27 @@ public class Input {
         }while(validDouble < min || validDouble > max);
 
         return validDouble;
+    }
+
+    public Integer getBinary(){
+        try{
+            String binaryStr = getString();
+            return Integer.parseInt(binaryStr, 2);
+        } catch(NumberFormatException e){
+            throw new NumberFormatException("That was not a valid binary number.");
+        } catch(RuntimeException e){
+            throw new RuntimeException("Nope.");
+        } finally {
+            System.out.println("Nopeskies.");
+        }
+    }
+
+    public Integer getHex(){
+        try {
+            String hexStr = getString();
+            return Integer.parseInt(hexStr, 16);
+        } catch(NumberFormatException e){
+            throw new NumberFormatException("That was not a valid hexidecimal number.");
+        }
     }
 }
