@@ -58,23 +58,23 @@ public class GroceriesApplication {
                         }
                         case 3 -> {
                             meat.put(grocery, quantity);
-                            System.out.println(dairy);
+                            System.out.println(meat);
                         }
                         case 4 -> {
                             beverages.put(grocery, quantity);
-                            System.out.println(dairy);
+                            System.out.println(beverages);
                         }
                         case 5 -> {
                             cannedGoods.put(grocery, quantity);
-                            System.out.println(dairy);
+                            System.out.println(cannedGoods);
                         }
                         case 6 -> {
                             bakery.put(grocery, quantity);
-                            System.out.println(dairy);
+                            System.out.println(bakery);
                         }
                         case 7 -> {
                             everythingElse.put(grocery, quantity);
-                            System.out.println(dairy);
+                            System.out.println(everythingElse);
                         }
                         default -> System.out.println("That's number isn't associated with any category!");
                     }

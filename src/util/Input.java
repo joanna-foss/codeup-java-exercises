@@ -10,7 +10,7 @@ public class Input {
     }
 
     public String getString(){
-        return scanner.next();
+        return scanner.nextLine();
     }
 
     public boolean yesNo(){ //issues with this ignoring scanner input
@@ -23,7 +23,7 @@ public class Input {
             String s = getString();
             return Integer.valueOf(s);
         } catch(NumberFormatException e){
-            throw new NumberFormatException("That was not a number.");
+            return getInt();
         }
     }
 
@@ -42,7 +42,7 @@ public class Input {
             String s = getString();
             return Double.valueOf(s);
         } catch(NumberFormatException e){
-            throw new NumberFormatException("That was not a number.");
+            return getDouble();
         }
     }
 
@@ -61,11 +61,8 @@ public class Input {
             String binaryStr = getString();
             return Integer.parseInt(binaryStr, 2);
         } catch(NumberFormatException e){
-            throw new NumberFormatException("That was not a valid binary number.");
-        } catch(RuntimeException e){
-            throw new RuntimeException("Nope.");
-        } finally {
-            System.out.println("Nopeskies.");
+            System.out.println("That was not a valid binary number. Try again: ");
+            return getBinary();
         }
     }
 
@@ -74,7 +71,8 @@ public class Input {
             String hexStr = getString();
             return Integer.parseInt(hexStr, 16);
         } catch(NumberFormatException e){
-            throw new NumberFormatException("That was not a valid hexidecimal number.");
+            System.out.println("That was not a valid hexidecimal number. Try again: ");
+            return getHex();
         }
     }
 }
