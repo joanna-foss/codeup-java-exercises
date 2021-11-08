@@ -1,5 +1,6 @@
 public class JavaFundamentals {
-/**# Java Fundamentals
+/**
+* # Java Fundamentals
 
 ## Main Concepts to be Assessed
 
