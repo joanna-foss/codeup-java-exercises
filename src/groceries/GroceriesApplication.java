@@ -2,6 +2,7 @@ package groceries;
 
 import util.Input;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -12,14 +13,13 @@ public class GroceriesApplication {
     }
 
     public static void createGroceryList(){
-        Map<String, Integer> produce = new HashMap<>();
-        Map<String, Integer> dairy = new HashMap<>();
-        Map<String, Integer> meat = new HashMap<>();
-        Map<String, Integer> beverages = new HashMap<>();
-        Map<String, Integer> cannedGoods = new HashMap<>();
-        Map<String, Integer> bakery = new HashMap<>();
-        Map<String, Integer> everythingElse = new HashMap<>();
-//        HashMap<String, Integer> myGroceries = Map.of();
+        Map<String, Integer> produce = new TreeMap<>();
+        Map<String, Integer> dairy = new TreeMap<>();
+        Map<String, Integer> meat = new TreeMap<>();
+        Map<String, Integer> beverages = new TreeMap<>();
+        Map<String, Integer> cannedGoods = new TreeMap<>();
+        Map<String, Integer> bakery = new TreeMap<>();
+        Map<String, Integer> everythingElse = new TreeMap<>();
 
         boolean create = true;
 
@@ -27,27 +27,27 @@ public class GroceriesApplication {
         while(create) {
             int selection = selectAnOption();
             switch (selection) {
-                case 0 -> {
-//                    if (myGroceries.isEmpty()) {
-//                        System.out.println("Your list is empty!");
-//                    } else {
-                    sort(dairy);
-//                        System.out.println(myGroceries); //will display location as is. Address this later.
-//                    }
-                }
-                case 1 -> {
-                    //add item method
+                case 0 -> { //display full grocery list - refactor opportunity
+                    for(Map.Entry<String, Integer> entry : produce.entrySet()) System.out.println("Category: Produce || Item: " + entry.getKey() + " || Quantity: " + entry.getValue());
+                    for(Map.Entry<String, Integer> entry : dairy.entrySet()) System.out.println("Category: Dairy || Item: " + entry.getKey() + " || Quantity: " + entry.getValue());
+                    for(Map.Entry<String, Integer> entry : meat.entrySet()) System.out.println("Category: Meat || Item: " + entry.getKey() + " || Quantity: " + entry.getValue());
+                    for(Map.Entry<String, Integer> entry : beverages.entrySet()) System.out.println("Category: Beverages || Item: " + entry.getKey() + " || Quantity: " + entry.getValue());
+                    for(Map.Entry<String, Integer> entry : cannedGoods.entrySet()) System.out.println("Category: Canned Goods || Item: " + entry.getKey() + " || Quantity: " + entry.getValue());
+                    for(Map.Entry<String, Integer> entry : bakery.entrySet()) System.out.println("Category: Bakery || Item: " + entry.getKey() + " || Quantity: " + entry.getValue());
+                    for(Map.Entry<String, Integer> entry : everythingElse.entrySet()) System.out.println("Category: Everything Else || Item: " + entry.getKey() + " || Quantity: " + entry.getValue());
+               }
+                case 1 -> { //add item to grocery list
                     System.out.println("First, choose a category to add your item to: ");
                     displayCategories();
                     int categoryNum = input.getInt();
 
                     System.out.println("What is the item you'd like to add?");
-                    String grocery = input.getString(); //something is happening here...
+                    String grocery = input.getString();
 
                     System.out.println("How many of these would you like to add?");
                     int quantity = input.getInt();
 
-                    switch(categoryNum){
+                    switch(categoryNum){ //refactor opportunity
                         case 1 -> {
                             produce.put(grocery, quantity);
                             System.out.println(produce);
@@ -76,7 +76,7 @@ public class GroceriesApplication {
                             everythingElse.put(grocery, quantity);
                             System.out.println(dairy);
                         }
-                        default -> System.out.println("default");
+                        default -> System.out.println("That's number isn't associated with any category!");
                     }
 
                 }
@@ -89,7 +89,7 @@ public class GroceriesApplication {
                 case 4 -> { //display categories
                     displayCategories();
                 }
-                case 5 -> {
+                case 5 -> { //exit
                     System.out.println("Excellent! I hope you had fun. Bye bye now!");
                     return;
                 }
@@ -99,8 +99,9 @@ public class GroceriesApplication {
             }
             System.out.println("Would you like to make another selection? [Y/N]");
             create = input.yesNo();
-        };
-    };
+        }
+        System.out.println("Excellent! I hope you had fun. Bye bye now!");
+    }
 
     static Input input = new Input();
 
@@ -114,18 +115,6 @@ public class GroceriesApplication {
         System.out.println("5 - Exit");
         System.out.println("What would you like to do? Please enter a number: ");
         return input.getInt();
-    }
-
-//    public static <K, V> Map<K, V> convertHashToTree(Map<K, V> category){
-//        Map<K, V> itemsSorted = new TreeMap<>();
-//        category.putAll(itemsSorted);
-//        return itemsSorted;
-//    }
-    public static void sort(Map<String, Integer> Cat){
-        Map<String, Integer> map = new TreeMap<>(Cat);
-        for(Map.Entry<String, Integer> entry : map.entrySet()){
-            System.out.println(entry.getKey() + " || " + entry.getValue());
-        }
     }
 
     public static void displayCategories(){
