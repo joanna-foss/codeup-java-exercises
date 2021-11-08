@@ -2,9 +2,9 @@ package groceries;
 
 import util.Input;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class GroceriesApplication {
     public static void main(String[] args) {
@@ -12,14 +12,14 @@ public class GroceriesApplication {
     }
 
     public static void createGroceryList(){
-        HashMap<String, Integer> produce = new HashMap<>();
-        HashMap<String, Integer> dairy = new HashMap<>();
-        HashMap<String, Integer> meat = new HashMap<>();
-        HashMap<String, Integer> beverages = new HashMap<>();
-        HashMap<String, Integer> cannedGoods = new HashMap<>();
-        HashMap<String, Integer> bakery = new HashMap<>();
-        HashMap<String, Integer> everythingElse = new HashMap<>();
-        Map<String, Integer> myGroceries = Map.of();
+        Map<String, Integer> produce = new HashMap<>();
+        Map<String, Integer> dairy = new HashMap<>();
+        Map<String, Integer> meat = new HashMap<>();
+        Map<String, Integer> beverages = new HashMap<>();
+        Map<String, Integer> cannedGoods = new HashMap<>();
+        Map<String, Integer> bakery = new HashMap<>();
+        Map<String, Integer> everythingElse = new HashMap<>();
+//        HashMap<String, Integer> myGroceries = Map.of();
 
         boolean create = true;
 
@@ -28,11 +28,12 @@ public class GroceriesApplication {
             int selection = selectAnOption();
             switch (selection) {
                 case 0 -> {
-                    if (myGroceries.isEmpty()) {
-                        System.out.println("Your list is empty!");
-                    } else {
-                        System.out.println(myGroceries); //will display location as is. Address this later.
-                    }
+//                    if (myGroceries.isEmpty()) {
+//                        System.out.println("Your list is empty!");
+//                    } else {
+                    sort(dairy);
+//                        System.out.println(myGroceries); //will display location as is. Address this later.
+//                    }
                 }
                 case 1 -> {
                     //add item method
@@ -115,8 +116,16 @@ public class GroceriesApplication {
         return input.getInt();
     }
 
-    public static void itemMan(){
-
+//    public static <K, V> Map<K, V> convertHashToTree(Map<K, V> category){
+//        Map<K, V> itemsSorted = new TreeMap<>();
+//        category.putAll(itemsSorted);
+//        return itemsSorted;
+//    }
+    public static void sort(Map<String, Integer> Cat){
+        Map<String, Integer> map = new TreeMap<>(Cat);
+        for(Map.Entry<String, Integer> entry : map.entrySet()){
+            System.out.println(entry.getKey() + " || " + entry.getValue());
+        }
     }
 
     public static void displayCategories(){
