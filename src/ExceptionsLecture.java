@@ -34,10 +34,10 @@ public class ExceptionsLecture {
     }
 }
 /**TYPES OF EXCEPTIONS
- * checked: MUST be handled.
- * unchecked: DOES NOT NEED to be handled.
+ * checked: MUST be handled before compiling
+ * unchecked: DOES NOT NEED to be handled before compiling.
  * Exception: recoverable error occurs.
- * Runtime Exception: error that occurs during runtime. can be prevented programmatically.
+ * Runtime Exception: error that occurs during runtime (after compiling). can be prevented programmatically.
  * Error: non-recoverable error occurs. Serious.
  *
  *
