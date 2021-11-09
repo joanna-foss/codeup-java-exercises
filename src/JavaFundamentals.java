@@ -26,14 +26,27 @@ TODO: STUDY -> Exceptions and Error Handling
 
 ### Java I
 
-TODO: - [ ] I can explain how Java code runs: from being written to executing on an operation system.
-TODO: - [ ] I can explain the difference between a primitive type and a reference type in Java.
-TODO: - [ ] I can name several primitive types in Java.
-TODO: - [ ] I can explain why multiple number primitive types are used.
-TODO: - [ ] I can give an example of implicit and explicit casting.
-TODO: - [ ] I can explain the difference between a runtime and compile-time error.
-TODO: - [ ] I can identify the major editions of Java.
-TODO: - [ ] I can define what a Java wrapper class is.
+TODO: - [X] I can explain how Java code runs: from being written to executing on an operation system.
+    Java code is written in a way that is plain-text and human-readable. Java source code is saved as a java file is compiled with the javac tool. The output of a java file upon compilation is a class file (that contains JVM Bytecode - this is the lower-level language that closely resembles executable computer code.
+TODO: - [X] I can explain the difference between a primitive type and a reference type in Java.
+    Primitive types: "building blocks" of the language; any variable that holds a primitive type has a value. There are 8.
+    (byte, short, int, long, float, double, char, boolean)
+    Reference types: types that refer to objects or arrays. They default to 'null' indicating a lack of an object. There are 5.
+    (Array, Class, Interface, String, Enumeration, Annotations)
+TODO: - [X] I can name several primitive types in Java.
+    Look above.
+TODO: - [X] I can explain why multiple number primitive types are used.
+    Java is a strict language that is compiled into byte code. It's like an assembly language that can only be read by the Java Virtual Machine. Therefore, you MUST specify the exact number of bits needed to interpret each number variable. It is possible to use double and long for every number variable. HOWEVER, it's ideal to use the smallest amount of data possible to accomplish a task to preserve memory (although in today's world, that is becoming less and less relevant).
+TODO: - [X] I can give an example of implicit and explicit casting.
+    Implicit casting: more precise variable to less precise. (example: int to long)
+    Explicit casting: less price variable to more precise. (example: double to int)
+TODO: - [X] I can explain the difference between a runtime and compile-time error.
+    Runtime errors: These are errors that occur after compiling and during the time at which the java code is run.
+    Compile-time errors: These are errors that occur during compilation indicating that JVM Bytecode cannot be created. (verify)
+TODO: - [X] I can identify the major editions of Java.
+    The major editions are the ones that have regular updates for prolonged periods of time. These are: (Java SE 8, Java SE 11, Java SE 17).
+TODO: - [X] I can define what a Java wrapper class is.
+    Wrapper classes provide a way for us to use primitive data types as objects.
 
 ### Java II
 
