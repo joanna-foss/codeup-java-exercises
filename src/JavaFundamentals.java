@@ -22,8 +22,6 @@ TODO: STUDY -> Exceptions and Error Handling
 
 ## Java Fundamentals Checklist
 
-The following are several points of competency and skill that are intended to help identify areas of additional practice and study. Not all answers are found in the Codeup curriculum.
-
 ## Knowledge
 
 ### Java I
@@ -86,11 +84,11 @@ TODO: - [ ] I can write methods and collections that work with a parent class or
 
 Below are examples of the type of problem you will encounter on the assessment. These problems are not an exhaustive example of all the topics that will be covered on the assessment, rather, are meant to familiarize you with the kind of problem and format to expect.
 
-1. Create an `Assessment` class with a public static method named `half`. It should accept a number and return the number divided by two.
-1. Within your `Assessment` class create a public static method named `shout`. It should accept a string and return the same string in all upper case with 3 exclamation marks added to the end of it.
-1. Create an `Animal` class. It should have private instance properties for strings `name` and `species`, and public getters and setters for both.
-1. Within your `Animal` class, define an instance method named `roar`. It should accept no arguments and return a string like "I am $NAME, hear me roar!" where `$NAME` is replaced with the value of the name property for that object.
-1. Within your `Assessment` class create a public static method named `removeCats`. It should accept a list of animal objects and return a list of animal objects where any animal object with a species of "Felis catus" is removed.
+TODO: [ ] 1. Create an `Assessment` class with a public static method named `half`. It should accept a number and return the number divided by two.
+TODO: [ ] 2. Within your `Assessment` class create a public static method named `shout`. It should accept a string and return the same string in all upper case with 3 exclamation marks added to the end of it.
+TODO: [ ] 3. Create an `Animal` class. It should have private instance properties for strings `name` and `species`, and public getters and setters for both.
+TODO: [ ] 4. Within your `Animal` class, define an instance method named `roar`. It should accept no arguments and return a string like "I am $NAME, hear me roar!" where `$NAME` is replaced with the value of the name property for that object.
+TODO: [ ] 5. Within your `Assessment` class create a public static method named `removeCats`. It should accept a list of animal objects and return a list of animal objects where any animal object with a species of "Felis catus" is removed.
 
 Note that the assessment spec only requires you to have methods and classes defined, there is not any requirement for a `main` method. However, creating additional methods will **not** be counted against you, so you are **_highly encouraged_** to create a `main` method and write some code that tests out the code you are writing for the assessment specification. For example, if you were working on the `half` function, you should call that function within the main method and make sure that it returns the correct values for several test cases.
 
